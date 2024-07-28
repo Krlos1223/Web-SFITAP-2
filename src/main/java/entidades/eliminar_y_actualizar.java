@@ -19,6 +19,7 @@ public class eliminar_y_actualizar {
 
     public static void main(String[] args) {
 
+        //Creacion de la fabrica de sesiones de hibernate
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(usuarios.class)
@@ -35,8 +36,7 @@ public class eliminar_y_actualizar {
             //inicio de transaccion
             session.beginTransaction();
 
-            //Actualizacion de usuario
-            //session.createQuery("update usuarios u set u.nombre u.apellido u.cedula u.fecha_de_nacimiento u.rol u.nombre_de_usuario u.contraseña");
+            //Actualizacion de usuario            
             usuarios per = session.get(usuarios.class, 6);
             per.setNombre("Manuela");
             per.setApellido("Cardenas");
@@ -47,7 +47,8 @@ public class eliminar_y_actualizar {
             per.setContraseña("7894561230");
 
             //eliminacion de usuario
-            //session.createQuery("delete from usuarios u where u.usuario_id = 1").executeUpdate();
+            session.createQuery("delete from usuarios u where u.usuario_id = 1").executeUpdate();
+            
             //fin de transaccion
             session.getTransaction().commit();
 

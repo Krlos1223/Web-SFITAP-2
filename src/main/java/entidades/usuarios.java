@@ -10,11 +10,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+//Esta clase es una entidad que se mapeara en una tabla de una BD
 @Entity
+//Especifica el nombre de la tabla de la BD 
 @Table(name = "usuarios")
 public class usuarios {
-
+    
+    //Clave primaria de la tabla
     @Id
+    //Especifica el nombre de la columna en la tabla de la BD que corresponde a este campo
     @Column(name = "usuario_id")
     private int usuario_id;
     
@@ -39,10 +43,12 @@ public class usuarios {
     @Column(name = "contraseña")
     private String contraseña;
     
+    //Constructor necesario para hibernate
     public usuarios(){
     
     }
 
+    //Constructor con parámetros para crear instancias de la clase con todos los campos inicializados
     public usuarios(String nombre, String apellido, String cedula, Date fecha_de_nacimiento, String rol, String nombre_de_usuario, String contraseña) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -53,6 +59,7 @@ public class usuarios {
         this.contraseña = contraseña;
     }
 
+    //Métodos getter y setter para acceder y modificar los campos privados de la clase
     public int getUsuario_id() {
         return usuario_id;
     }
@@ -117,6 +124,7 @@ public class usuarios {
         this.contraseña = contraseña;
     }
 
+    //// Método toString para representar la entidad en forma de cadena de texto
     @Override
     public String toString() {
         return "Usuario{" + "usuario_id=" + usuario_id + ", nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula + ", fecha_de_nacimiento=" + fecha_de_nacimiento + ", rol=" + rol + ", nombre_de_usuario=" + nombre_de_usuario + ", contrase\u00f1a=" + contraseña + '}';

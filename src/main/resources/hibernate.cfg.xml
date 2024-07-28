@@ -4,22 +4,22 @@
     
     <session-factory>
         
-        <!-- Configuración de la conexión a la base de datos -->
+        <!-- Conexion a la base de datos MySQL -->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://127.0.0.1:3306/db_sfi_tap</property>
         <property name="connection.username">capiedrahita1</property>
         <property name="connection.password">C@ps*7414</property>
             
-        <!-- JDBC connection pool settings … using built-in test pool -->
+        <!-- Tamaño del grupo de conexiones -->
         <property name="connection.pool_size">1</property>
         
-        <!-- Seleccion de lenguaje sql -->
+        <!-- Dialecto SQL para MySQL -->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
         
-        <!-- Echo the SQL to stdout -->
+        <!-- Mostrar las consultas SQL en la consola -->
         <property name="show_sql">true</property>
         
-        <!-- Set the current session context -->
+        <!-- Usar un contexto de sesión basado en hilos -->
         <property name="current_session_context_class">thread</property>
                 
     </session-factory>

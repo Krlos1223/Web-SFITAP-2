@@ -3,7 +3,7 @@
   <!-- Define Persistence Unit -->
   <persistence-unit name="my_persistence_unit">
     <class>entidades.usuarios</class>
-    <class>insert.conexion</class>
     <class>entidades.NewEntity</class>
+    <class>entidades.conexion</class>
   </persistence-unit>
 </persistence>
