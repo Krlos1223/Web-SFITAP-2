@@ -1,6 +1,4 @@
-entidades\usuarios.class
 com\mycompany\sfita_web_2\JakartaRestConfiguration.class
-entidades\eliminar_y_actualizar.class
 com\mycompany\sfita_web_2\resources\JakartaEE10Resource.class
-entidades\consulta.class
-Insert\conexion.class
+com\mycompany\sfita_web_2\servlet_insert.class
+com\mycompany\sfita_web_2\Usuarios.class
