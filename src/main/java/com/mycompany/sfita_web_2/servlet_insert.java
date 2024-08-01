@@ -12,20 +12,20 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
+//Definicion del servlet y URL para acceder a el
 @WebServlet("/servlet_insert")
 public class servlet_insert extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    private static final Logger LOGGER = Logger.getLogger(servlet_insert.class.getName());
-
+    
+    //Redireccion de las solicitudes GET a la pagina de registro
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.sendRedirect("registro.jsp");
     }
 
+    //Manejo de las solicitudes POST para registrar un nuevo usuario
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nombres = request.getParameter("nombres");
@@ -35,8 +35,6 @@ public class servlet_insert extends HttpServlet {
         String rol = request.getParameter("rol");
         String nombre_de_usuario = request.getParameter("nombre_de_usuario");
         String contraseña = request.getParameter("contraseña");
-
-        LOGGER.info("Datos recibidos del formulario: " + nombres + " " + apellidos + " " + cedula + " " + fecha_nacimiento + " " + rol + " " + nombre_de_usuario + " " + contraseña);
 
         // Creación de la fábrica de sesiones de Hibernate
         SessionFactory factory = new Configuration()
@@ -65,18 +63,8 @@ public class servlet_insert extends HttpServlet {
             // Confirmación (commit) de la transacción
             session.getTransaction().commit();
 
-            // Mensaje final que indica que todo ha salido bien
-            LOGGER.info("Usuario guardado en la base de datos");
-
             // Redirigir a una página de éxito
             response.sendRedirect("registro_exitoso.jsp");
-
-        } catch (IOException e) {
-            
-            e.printStackTrace();
-            // Captura y manejo de una excepción
-            LOGGER.log(Level.SEVERE, "Error al guardar el usuario: " + e.getMessage(), e);
-            response.sendRedirect("error.jsp");
 
         } finally {
             // Cierre de la fábrica de sesiones

@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - Taller Antonio Piedrahita</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Estilos CSS -->
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS para estilos -->
     <style>
+        /* Estilos CSS en línea */
         body {
             position: relative;
             margin: 0;
             padding: 0;
-            background-color: #E6DDDD;
+            background-color: #E6DDDD; /* Color de fondo */
         }
         body::before {
+            /* Elemento decorativo detrás del cuerpo */
             content: '';
             position: absolute;
             top: -2%;
@@ -24,68 +26,69 @@
             z-index: -1;
         }
         #registro {
-            max-width: 400px;
-            margin: 30px auto 0;
-            text-align: center;
+            max-width: 400px; /* Ancho máximo del formulario */
+            margin: 30px auto 0; /* Centrado del formulario */
+            text-align: center; /* Texto centrado */
         }
         #registro label {
-            display: block;
-            margin-bottom: 10px;
+            display: block; /* Cada etiqueta en una nueva línea */
+            margin-bottom: 10px; /* Espacio debajo de cada etiqueta */
         }
         #registro input, #registro select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
+            width: 100%; /* Los campos ocupan el ancho completo */
+            padding: 8px; /* Espaciado interno */
+            margin-bottom: 15px; /* Espacio debajo de cada campo */
+            box-sizing: border-box; /* Incluye el padding en el ancho */
         }
         #registro button {
-            padding: 10px 20px;
-            background-color: #44D257;
-            color: black;
-            border: #707070;
-            border-radius: 5px;
-            cursor: pointer;
+            padding: 10px 20px; /* Espaciado interno del botón */
+            background-color: #44D257; /* Color de fondo del botón */
+            color: black; /* Color del texto del botón */
+            border: #707070; /* Borde del botón */
+            border-radius: 5px; /* Esquinas redondeadas */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
         }
         #registro button:hover {
-            background-color: #44D257;
+            background-color: #44D257; /* Color de fondo al pasar el ratón */
         }
         #registro p {
-            margin-top: 1px;
+            margin-top: 1px; /* Espacio encima del párrafo */
         }
     </style>
 </head>
 <body>
+    <!-- Sección del formulario de registro -->
     <section id="registro">
-        <h1>Registro</h1>
-        <form action="servlet_insert" method="post">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombres" name="nombres" required>
-            
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellidos" name="apellidos" required>
-            
-            <label for="cedula">Cédula:</label>
-            <input type="text" id="cedula" name="cedula" required>
-            
-            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
-            
-            <label for="rol">Rol:</label>
-            <select id="rol" name="rol" required>
+        <h1>Registro</h1> <!-- Título de la página -->
+        <form action="servlet_insert" method="post"> <!-- Formulario que envía datos al servlet -->
+            <label for="nombre">Nombre:</label> <!-- Etiqueta para el campo nombre -->
+            <input type="text" id="nombres" name="nombres" required> <!-- Campo de entrada para el nombre -->
+
+            <label for="apellido">Apellido:</label> <!-- Etiqueta para el campo apellido -->
+            <input type="text" id="apellidos" name="apellidos" required> <!-- Campo de entrada para el apellido -->
+
+            <label for="cedula">Cédula:</label> <!-- Etiqueta para el campo cédula -->
+            <input type="text" id="cedula" name="cedula" required> <!-- Campo de entrada para la cédula -->
+
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label> <!-- Etiqueta para el campo fecha de nacimiento -->
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required> <!-- Campo de entrada para la fecha de nacimiento -->
+
+            <label for="rol">Rol:</label> <!-- Etiqueta para el campo rol -->
+            <select id="rol" name="rol" required> <!-- Menú desplegable para seleccionar el rol -->
                 <option value="administrador">Administrador</option>
                 <option value="mecanico">Mecánico</option>
                 <option value="vendedor">Vendedor</option>
             </select>
 
-            <label for="nombre de usuario">Nombre de usuario:</label>
-            <input type="text" id="nombre_de_usuario" name="nombre_de_usuario" required>
+            <label for="nombre de usuario">Nombre de usuario:</label> <!-- Etiqueta para el campo nombre de usuario -->
+            <input type="text" id="nombre_de_usuario" name="nombre_de_usuario" required> <!-- Campo de entrada para el nombre de usuario -->
 
-            <label for="password">Contraseña:</label>
-            <input type="password" id="contraseña" name="contraseña" required>
-            
-            <button type="submit">Registrarse</button>
+            <label for="password">Contraseña:</label> <!-- Etiqueta para el campo contraseña -->
+            <input type="password" id="contraseña" name="contraseña" required> <!-- Campo de entrada para la contraseña -->
+
+            <button type="submit">Registrarse</button> <!-- Botón para enviar el formulario -->
         </form>
-        <p><a href="registro_exitoso.jsp">Volver al panel de Administrador</a></p>
+        <p><a href="registro_exitoso.jsp">Volver al panel de Administrador</a></p> <!-- Enlace para volver al panel de administrador -->
     </section>
     
     <footer>

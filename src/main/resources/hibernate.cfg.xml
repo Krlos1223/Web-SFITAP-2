@@ -2,30 +2,39 @@
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+        
+        //<!-- Configuración del dialecto de SQL para MySQL -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        //<!-- Información del controlador JDBC para MySQL -->
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        
+        <!-- URL de conexión a la base de datos -->
         <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/db_sfi_tap?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC</property>
+        
+        <!-- Nombre de usuario para la base de datos -->
         <property name="hibernate.connection.username">capiedrahita1</property>
+        
+        <!-- Contraseña para la base de datos -->
         <property name="hibernate.connection.password">C@ps*7414</property>
         
-         <!-- JDBC connection pool settings ... using built-in test pool -->
+        <!-- Configuración de la conexión JDBC usando un pool de conexiones -->
         <property name="hibernate.c3p0.min_size">5</property>
         <property name="hibernate.c3p0.max_size">20</property>
         <property name="hibernate.c3p0.timeout">300</property>
         <property name="hibernate.c3p0.max_statements">50</property>
         <property name="hibernate.c3p0.idle_test_period">3000</property>
         
-         <!-- Select our SQL dialect -->
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        
+         <!-- Mostrar las sentencias SQL en la consola -->        
         <property name="hibernate.show_sql">true</property>
         
+         <!-- No crear, actualizar ni borrar las tablas automáticamente -->
         <property name="hibernate.hbm2ddl.auto">none</property>
         
-         <!-- Contexto de sesión -->
+        <!-- Usar el contexto de la sesión basado en hilos -->
         <property name="hibernate.current_session_context_class">thread</property>
 
-        <!-- Escaneo de clases anotadas -->
+         <!-- Escaneo de la clase anotada -->
         <mapping class="com.mycompany.sfita_web_2.Usuarios"/>
     </session-factory>
 </hibernate-configuration>

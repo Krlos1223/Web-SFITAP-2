@@ -6,11 +6,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+//Define que esta clase es una entidad que se mapea a una tabla en la base de datos
 @Entity
 @Table(name = "usuarios")
 public class Usuarios {
 
+    //Define el identificador único para la entidad
     @Id
+    //Define las columnas de la tabla y sus nombres
     @Column(name = "usuario_id")
     private int usuario_id;
 
@@ -39,7 +42,7 @@ public class Usuarios {
     public Usuarios() {
     }
 
-    // Constructor con parámetros
+    // Constructor con parámetros para crear objetos Usuarios fácilmente
     public Usuarios(String nombres, String apellidos, String cedula, Date fecha_de_nacimiento, String rol, String nombre_de_usuario, String contraseña) {
         this.nombre = nombres;
         this.apellido = apellidos;
@@ -50,7 +53,7 @@ public class Usuarios {
         this.contraseña = contraseña;
     }
 
-    // Getters y Setters
+    // Métodos getter y setter para acceder y modificar los campos
     public int getUsuario_id() {
         return usuario_id;
     }
@@ -115,6 +118,7 @@ public class Usuarios {
         this.contraseña = contraseña;
     }
 
+    //Método para representar el objeto como una cadena de texto
     @Override
     public String toString() {
         return "Usuarios{" + "usuario_id=" + usuario_id + ", nombres=" + nombre + ", apellidos=" + apellido + ", cedula=" + cedula + ", fecha_de_nacimiento=" + fecha_de_nacimiento + ", rol=" + rol + ", nombre_de_usuario=" + nombre_de_usuario + ", contraseña=" + contraseña + '}';
