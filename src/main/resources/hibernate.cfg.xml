@@ -3,10 +3,10 @@
 <hibernate-configuration>
     <session-factory>
         
-        //<!-- Configuración del dialecto de SQL para MySQL -->
+        <!-- Configuración del dialecto de SQL para MySQL -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         
-        //<!-- Información del controlador JDBC para MySQL -->
+        <!-- Información del controlador JDBC para MySQL -->
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         
         <!-- URL de conexión a la base de datos -->

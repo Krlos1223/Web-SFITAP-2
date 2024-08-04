@@ -1,4 +1,8 @@
+com\mycompany\sfita_web_2\consulta_servlet.class
 com\mycompany\sfita_web_2\JakartaRestConfiguration.class
 com\mycompany\sfita_web_2\resources\JakartaEE10Resource.class
 com\mycompany\sfita_web_2\servlet_insert.class
+com\mycompany\sfita_web_2\actualizar_servlet.class
+com\mycompany\sfita_web_2\eliminar_servlet.class
+com\mycompany\sfita_web_2\consulta_eliminar_servlet.class
 com\mycompany\sfita_web_2\Usuarios.class

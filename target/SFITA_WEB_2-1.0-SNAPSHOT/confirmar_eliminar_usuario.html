@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminacion de Usuario</title>
+    <style>
+        body {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            background-color: #E6DDDD;
+            text-align: center; /* Alinea el contenido al centro horizontalmente */
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: -125px;
+            left: 20px;
+            width: 96.5%;
+            height: 190%;
+            background-color: #DFDEDE;
+            border: 3px solid #707070;
+            z-index: -1;
+        }      
+        h1, #mensajeEliminacionExitosa {
+            font-size: 70px;
+            margin-top: 150px; /* Ajusta el margen superior para centrarlo verticalmente */
+        }
+    </style>
+</head>
+<body>
+    <h1>Eliminacion de Usuario</h1>
+    <div id="mensajeEliminacionExitosa">¡El usuario ha sido eliminado!</div>
+    
+    <script>
+        window.onload = function (){
+            var mensajeEliminacionExitosa = document.getElementById("mensajeEliminacionExitosa")
+            mensajeEliminacionExitosa.style.display ="block"
+
+            setTimeout(function() {
+                mensajeEliminacionExitosa.style.display = "none"
+                window.location.href = "modulo_admin.jsp"
+            }, 3000)
+        }
+    </script>
+</body>
+</html>

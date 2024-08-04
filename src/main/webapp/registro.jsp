@@ -88,7 +88,7 @@
 
             <button type="submit">Registrarse</button> <!-- Botón para enviar el formulario -->
         </form>
-        <p><a href="registro_exitoso.jsp">Volver al panel de Administrador</a></p> <!-- Enlace para volver al panel de administrador -->
+        <p><a href="index.html">Salir</a></p> <!-- Enlace para volver al panel de administrador -->
     </section>
     
     <footer>

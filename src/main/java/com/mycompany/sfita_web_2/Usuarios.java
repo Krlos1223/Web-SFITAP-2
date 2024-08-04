@@ -66,15 +66,15 @@ public class Usuarios {
         return nombre;
     }
 
-    public void setNombres(String nombres) {
+    public void setNombre(String nombres) {
         this.nombre = nombres;
     }
 
-    public String getApellidos() {
+    public String getApellido() {
         return apellido;
     }
 
-    public void setApellidos(String apellidos) {
+    public void setApellido(String apellidos) {
         this.apellido = apellidos;
     }
 
