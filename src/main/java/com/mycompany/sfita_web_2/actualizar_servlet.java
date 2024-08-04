@@ -11,12 +11,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+// Define el servlet y mapea la URL /actualizar_servlet
 @WebServlet(name = "actualizar_servlet", urlPatterns = {"/actualizar_servlet"})
 public class actualizar_servlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private SessionFactory factory;
 
+    // Inicializa el SessionFactory de Hibernate cuando el servlet se carga
     @Override
     public void init() throws ServletException {
         factory = new Configuration()
@@ -25,6 +27,7 @@ public class actualizar_servlet extends HttpServlet {
                 .buildSessionFactory();
     }
 
+    // Maneja las solicitudes GET
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nombreDeUsuario = request.getParameter("nombre_de_usuario");
@@ -32,6 +35,7 @@ public class actualizar_servlet extends HttpServlet {
         try (Session session = factory.getCurrentSession()) {
             session.beginTransaction();
 
+            // Realizar la consulta HQL para encontrar el usuario
             Usuarios usuario = (Usuarios) session.createQuery("from Usuarios where nombre_de_usuario = :nombreDeUsuario")
                     .setParameter("nombreDeUsuario", nombreDeUsuario)
                     .uniqueResult();
@@ -50,6 +54,7 @@ public class actualizar_servlet extends HttpServlet {
         }
     }
 
+    // Maneja las solicitudes POST
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int usuarioId = Integer.parseInt(request.getParameter("usuario_id"));
@@ -63,8 +68,10 @@ public class actualizar_servlet extends HttpServlet {
         try (Session session = factory.getCurrentSession()) {
             session.beginTransaction();
 
+            // Obtener el usuario por ID
             Usuarios usuario = session.get(Usuarios.class, usuarioId);
             if (usuario != null) {
+                // Actualizar los datos del usuario
                 usuario.setNombre(nombre);
                 usuario.setApellido(apellido);
                 usuario.setCedula(cedula);
@@ -72,9 +79,11 @@ public class actualizar_servlet extends HttpServlet {
                 usuario.setRol(rol);
                 usuario.setNombre_de_usuario(nombreDeUsuario);
 
+                // Actualizar el usuario en la base de datos
                 session.update(usuario);
                 session.getTransaction().commit();
 
+                // Redirigir a la página de confirmación
                 System.out.println("Redirigiendo a confirmar_editar_usuario.html");
                 response.sendRedirect("confirmar_editar_usuario.html");
                 return;
@@ -88,9 +97,9 @@ public class actualizar_servlet extends HttpServlet {
             request.setAttribute("errorMessage", "Ocurrió un error al actualizar el usuario.");
             request.getRequestDispatcher("/resultados_busqueda.jsp").forward(request, response);
         }
-
     }
 
+    // Cierra el SessionFactory de Hibernate cuando el servlet se destruye
     @Override
     public void destroy() {
         factory.close();

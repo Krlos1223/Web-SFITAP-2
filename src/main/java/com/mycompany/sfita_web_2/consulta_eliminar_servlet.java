@@ -11,12 +11,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+// Define el servlet y mapea la URL /consulta_eliminar_servlet
 @WebServlet(name = "consulta_eliminar_servlet", urlPatterns = {"/consulta_eliminar_servlet"})
 public class consulta_eliminar_servlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private SessionFactory factory;
 
+    // Inicializa el SessionFactory de Hibernate cuando el servlet se carga
     @Override
     public void init() throws ServletException {
         factory = new Configuration()
@@ -25,6 +27,7 @@ public class consulta_eliminar_servlet extends HttpServlet {
                 .buildSessionFactory();
     }
 
+    // Maneja las solicitudes GET
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -63,11 +66,13 @@ public class consulta_eliminar_servlet extends HttpServlet {
             request.setAttribute("errorMessage", "Ocurrió un error al consultar el usuario.");
         }
 
+        // Redirige a la página de resultados de búsqueda
         request
                 .getRequestDispatcher("/resultados_busqueda_eliminar.jsp")
                 .forward(request, response);
     }
 
+    // Cierra el SessionFactory de Hibernate cuando el servlet se destruye
     @Override
     public void destroy() {
         factory.close();

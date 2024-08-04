@@ -100,49 +100,61 @@
     </style>    
 </head>
 <body>
+    <!-- Cabecera del documento -->
     <header>
+        <!-- Imagen del logo del Taller Antonio Piedrahita -->
         <img src="imagenes\logo_taller.jpg" alt="Logo Taller Antonio Piedrahita">
+        <!-- Título de la página, centrado en la cabecera -->
         <h1>Administrador</h1>
     </header>
     
-    <section id="panel-administrador">        
+    <!-- Sección principal del panel de administrador -->
+    <section id="panel-administrador">
+        <!-- Opción para gestionar usuarios -->
         <div class="opcion">
             <a href="gestion_usuarios.jsp">
                 <img src="imagenes\imagen_gestion_usuarios.png" alt="Gestión de Usuarios">
                 <p>Gestión de Usuarios</p>
             </a>
         </div>
+        <!-- Opción para gestionar clientes -->
         <div class="opcion">
             <a href="gestion_clientes.jsp">
                 <img src="imagenes\imagen_gestion_clientes.png" alt="Gestión de Clientes">
                 <p>Gestión de Clientes</p>
             </a>
         </div>
+        <!-- Opción para gestionar productos -->
         <div class="opcion">
             <a href="gestion_productos.jsp">
                 <img src="imagenes\imagen_gestion_productos.png" alt="Gestión de Productos">
                 <p>Gestión de Productos</p>
             </a>
         </div>
+        <!-- Opción para gestionar servicios -->
         <div class="opcion">
             <a href="gestion_servicios.jsp">
                 <img src="imagenes\imagen_gestion_servicios.png" alt="Gestión de Servicios">
                 <p>Gestión de Servicios</p>
             </a>
         </div>
+        <!-- Opción para gestionar ventas -->
         <div class="opcion">
             <a href="gestion_ventas.jsp">
                 <img src="imagenes\imagen_gestion_ventas.png" alt="Gestión de Ventas">
                 <p>Gestión de Ventas</p>
             </a>
         </div>
+        <!-- Sección para enlaces inferiores con reportes y configuración -->
         <div id="enlaces-inferiores">
+            <!-- Opción para ver reportes -->
             <div class="opcion">
                 <a href="reportes.jsp">
                     <img src="imagenes\imagen_reportes.png" alt="Reportes">
                     <p>Reportes</p>
                 </a>
             </div>
+            <!-- Opción para configuración -->
             <div class="opcion">
                 <a href="configuracion_2.jsp">
                     <img src="imagenes\boton_configuracion.png" alt="Configuración">
@@ -152,9 +164,12 @@
         </div>
     </section>
     
+    <!-- Pie de página, actualmente vacío -->
     <footer>
         <!-- Aquí va el pie de página -->
     </footer>
+    
+    <!-- Script para ajustar la posición del enlace de "Gestión de Ventas" -->
     <script>
         // Selecciona el enlace de "Gestión de Ventas"
         var gestionVentas = document.querySelector('a[href="gestion_ventas.jsp"]');
@@ -164,4 +179,3 @@
         gestionVentas.style.left = '300px';
     </script>
 </body>
-</html>

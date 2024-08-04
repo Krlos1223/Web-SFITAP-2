@@ -11,12 +11,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+// Define el servlet y mapea la URL /consulta_servlet
 @WebServlet("/consulta_servlet")
 public class consulta_servlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private SessionFactory factory;
 
+    // Inicializa el SessionFactory de Hibernate cuando el servlet se carga
     @Override
     public void init() throws ServletException {
         factory = new Configuration()
@@ -25,20 +27,22 @@ public class consulta_servlet extends HttpServlet {
                 .buildSessionFactory();
     }
 
+    // Maneja las solicitudes GET
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         // Obtener el parámetro de nombre de usuario
         String nombreDeUsuario = request.getParameter("nombre_de_usuario");
 
+        // Verifica si el nombre de usuario está vacío o nulo
         if (nombreDeUsuario == null || nombreDeUsuario.isEmpty()) {
             request.setAttribute("errorMessage", "Debe proporcionar un nombre de usuario.");
             request.getRequestDispatcher("/resultados_busqueda.jsp").forward(request, response);
             return;
         }
 
-        try ( // Realizar la consulta con Hibernate
-                Session session = factory.getCurrentSession()) {
+        // Realizar la consulta con Hibernate
+        try (Session session = factory.getCurrentSession()) {
             // Iniciar la transacción
             session.beginTransaction();
 
@@ -63,11 +67,11 @@ public class consulta_servlet extends HttpServlet {
             request.setAttribute("errorMessage", "Ocurrió un error al consultar el usuario.");
         }
 
-        request
-                .getRequestDispatcher("/resultados_busqueda.jsp")
-                .forward(request, response);
+        // Redirige a la página de resultados de búsqueda
+        request.getRequestDispatcher("/resultados_busqueda.jsp").forward(request, response);
     }
 
+    // Cierra el SessionFactory de Hibernate cuando el servlet se destruye
     @Override
     public void destroy() {
         factory.close();

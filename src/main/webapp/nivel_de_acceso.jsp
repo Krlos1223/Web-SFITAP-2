@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selecciona tu Perfil - Taller Antonio Piedrahita</title>
+    <meta charset="UTF-8"> <!-- Establece la codificación de caracteres de la página como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Configura la vista para dispositivos móviles, estableciendo el ancho de la ventana de visualización al ancho del dispositivo -->
+    <title>Selecciona tu Perfil - Taller Antonio Piedrahita</title> <!-- Título de la página que se muestra en la pestaña del navegador -->
     <link rel="stylesheet" href="styles.css"> <!-- Estilos CSS -->
     <style>
         body {
@@ -60,28 +60,34 @@
 </head>
 <body>
     <header>
-        <img src="imagenes\logo_taller.jpg" alt="Logo Taller Antonio Piedrahita">
+        <img src="imagenes/logo_taller.jpg" alt="Logo Taller Antonio Piedrahita">
+        <!-- Imagen del encabezado con el logo del taller -->
     </header>
     
     <section id="seleccion-perfil">
         <h1>Selecciona tu Perfil</h1>
+        <!-- Encabezado principal de la sección de selección de perfil -->
+        
         <div class="perfil">
             <a href="Ingresar.jsp">
-                <img src="imagenes\imagen_administrador.png" alt="Administrador">
+                <img src="imagenes/imagen_administrador.png" alt="Administrador">
                 <p>Administrador</p>
             </a>
+            <!-- Enlace a la página de ingreso para Administrador, con imagen y texto descriptivo -->
         </div>
         <div class="perfil">
             <a href="ingresar_vendedor.jsp">
-                <img src="imagenes\imagen_vendedor.png" alt="Vendedor">
+                <img src="imagenes/imagen_vendedor.png" alt="Vendedor">
                 <p>Vendedor</p>
             </a>
+            <!-- Enlace a la página de ingreso para Vendedor, con imagen y texto descriptivo -->
         </div>
         <div class="perfil">
             <a href="ingresar_mecanico.jsp">
-                <img src="imagenes\imagen_mecanico.png" alt="Mecánico">
+                <img src="imagenes/imagen_mecanico.png" alt="Mecánico">
                 <p>Mecánico</p>
             </a>
+            <!-- Enlace a la página de ingreso para Mecánico, con imagen y texto descriptivo -->
         </div>
     </section>
     
