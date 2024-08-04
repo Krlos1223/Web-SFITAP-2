@@ -42,7 +42,7 @@ public class actualizar_servlet extends HttpServlet {
 
             if (usuario != null) {
                 request.setAttribute("usuario", usuario);
-                request.getRequestDispatcher("/editar_usuario.jsp").forward(request, response);
+                request.getRequestDispatcher("/resultados_busqueda.jsp").forward(request, response);
             } else {
                 request.setAttribute("errorMessage", "Usuario no encontrado.");
                 request.getRequestDispatcher("/resultados_busqueda.jsp").forward(request, response);
